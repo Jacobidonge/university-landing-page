@@ -1,0 +1,393 @@
+.hero-section {
+  position: relative;
+  height: 120vh;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  filter: blur(2px);
+  top: -10%;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  background-image: url('/assets_univ/images/hero_image.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+  transform: translateY(0);
+  transition: transform 0.2s ease-out;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: left;
+  top: 30%;
+  max-width: 800px;
+  padding-left: 5%;
+  font-family: "Georgia", serif;
+}
+
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1030; // au-dessus du contenu
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+  &.scrolled {
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.navbar-brand img {
+  height: 70px;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar.scrolled .navbar-brand img {
+  height: 40px;
+}
+
+.impact-banner {
+  background-color: #f4f6f7;
+
+  .impact-title h2 {
+    font-family: 'Georgia', serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #3a2c1a; // brun académique
+  }
+
+  .impact-divider {
+    width: 4px;
+    height: 80px;
+    background-color: #b30000;
+  }
+
+  .impact-quote {
+    font-family: 'Lora', serif;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 450px;
+  }
+
+  .impact-button .btn {
+    background-color: #b30000;
+    border: none;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
+
+  @media (max-width: 768px) {
+    .impact-divider {
+      display: none;
+    }
+
+    .impact-title,
+    .impact-quote,
+    .impact-button {
+      text-align: center;
+    }
+  }
+}
+
+.departments-section {
+  background-color: #fff;
+
+  .icon {
+    height: 60px;
+    width: auto;
+  }
+
+  h5 {
+    font-family: 'Georgia', serif;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+  }
+
+  h6 {
+    font-family: 'Lora', serif;
+    margin-top: 1rem;
+    color: #222;
+  }
+
+  p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .img-fluid {
+    border-radius: 4px;
+  }
+}
+
+.academics-section {
+  background-color: #000;
+  background-image: url('/assets_univ/images/default.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 0.4s ease-in-out;
+  min-height: 600px;
+  color: white;
+  background-color: #111;
+
+  .left-content {
+    max-width: 500px;
+  }
+
+  .right-menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+
+    .academic-item {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 1.2rem;
+      cursor: pointer;
+      transition: background 0.3s;
+
+      .item-content {
+        font-size: 1.1rem;
+        font-weight: 500;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: transform 0.3s;
+
+        &.active {
+          background-color: rgba(255, 255, 255, 0.1);
+          transform: translateX(5px);
+        }
+
+        .arrow {
+          font-size: 1.3rem;
+        }
+      }
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+    }
+  }
+}
+
+.difference-banner {
+  background-color: #fff;
+
+  .text-brown {
+    color: #4a2e1b;
+    font-family: 'Georgia', serif;
+    font-size: 2.4rem;
+  }
+
+  .separator-line {
+    width: 5px;
+    height: 80px;
+    background-color: #c40000; // rouge profond
+  }
+
+  .quote-area p {
+    font-family: 'Lora', serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+
+  @media (max-width: 768px) {
+    .quote-area {
+      flex-direction: column;
+      align-items: center;
+
+      .separator-line {
+        height: 30px;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        text-align: center;
+      }
+    }
+  }
+}
+
+.source-banner {
+  background-color: #fff;
+
+  .text-brown {
+    color: #4a2e1b;
+    font-family: 'Georgia', serif;
+    font-size: 2.4rem;
+  }
+
+  .separator-line-yellow {
+    width: 5px;
+    height: 80px;
+    background-color: #ffc107; // jaune Bootstrap
+  }
+
+  .quote-area p {
+    font-family: 'Lora', serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+
+  @media (max-width: 768px) {
+    .quote-area {
+      flex-direction: column;
+      align-items: center;
+
+      .separator-line-yellow {
+        height: 30px;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        text-align: center;
+      }
+    }
+  }
+}
+
+.social-banner {
+  background-color: #111;
+  color: white;
+
+  .image-area {
+    flex: 1;
+    max-width: 600px;
+  }
+
+  .text-area {
+    flex: 1;
+    max-width: 700px;
+  }
+
+  h2 {
+    font-family: 'Georgia', serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #4a2e1b;
+  }
+
+  p {
+    font-family: 'Lora', serif;
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+
+  .btn-warning {
+    background-color: #ffc107;
+    border: none;
+    font-size: 1.1rem;
+    padding: 10px 30px;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 768px) {
+    .text-area {
+      text-align: center;
+    }
+
+    .image-area img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.find-way-banner {
+  background-color: #fff;
+  background-image: url('/assets_univ/images/b75bd8d1-293d-4283-a271-7282825d4319.png'); /* Image de fond */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  .text-brown {
+    color: #4a2e1b;
+    font-family: 'Georgia', serif;
+    font-size: 2.4rem;
+  }
+
+  .separator-line {
+    width: 5px;
+    height: 80px;
+    background-color: #c40000; // Rouge vif
+  }
+
+  .quote-area p {
+    font-family: 'Lora', serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+
+  @media (max-width: 768px) {
+    .quote-area {
+      flex-direction: column;
+      align-items: center;
+
+      .separator-line {
+        height: 30px;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        text-align: center;
+      }
+    }
+  }
+}
+
+.footer {
+  background-color: #4a2e1b; /* Brun foncé */
+  color: white;
+
+  .text-brown {
+    color: #4a2e1b;
+  }
+
+  .list-inline-item {
+    margin-right: 15px;
+  }
+
+  .btn-warning {
+    background-color: #ffc107;
+    border: none;
+    font-size: 1rem;
+    padding: 10px 20px;
+    text-transform: uppercase;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .list-unstyled {
+    padding-left: 0;
+  }
+
+  .fab {
+    font-size: 1.5rem;
+  }
+
+  .text-muted {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  @media (max-width: 768px) {
+    .col-md-4 {
+      text-align: center;
+    }
+
+    .list-inline-item {
+      margin-right: 10px;
+    }
+  }
+}
